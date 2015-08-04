@@ -59,4 +59,47 @@ public class MySQLConnect {
         }
         return Collections.emptyList();
     }
+
+    /**
+     * 登陆验证
+     * @param account 需要被验证的账户
+     * @return 登陆成功返回true
+     *         登陆失败返回false
+     */
+    public static boolean loginValidate(Account account) {
+        Connection connection = null;
+        Statement statement = null;
+        String sql = "select * from account where user_name='" + account.getUserName() + "' and password='" + account.getPassword() + "'";
+        logger.info("登陆验证时查询的sql语句是：{}", sql);
+        try {
+            connection = DriverManager.getConnection(DBConfig.URL, DBConfig.USERNAME, DBConfig.PASSWORD);
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            if (resultSet.next()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            logger.info("获取数据库库连接或者执行sql语句或者获取数据错误", e);
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    logger.info("Statement关闭异常", e);
+                }
+            }
+
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    logger.info("关闭数据库连接异常", e);
+                }
+            }
+        }
+        return false;
+    }
 }

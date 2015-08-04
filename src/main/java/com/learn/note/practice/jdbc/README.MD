@@ -1,19 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+### JDBC使用demo
 
-  <groupId>com.learn.note.practice</groupId>
-  <artifactId>code</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
-
-  <name>code</name>
-  <url>http://maven.apache.org</url>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
+需要使用到jdbc的mysql驱动，并且使用到了slf4j日志服务。
+所有依赖的jar包通过maven管理
+在pom.xml文件中配置如下
+```xml
   <dependencies>
     <dependency>
         <groupId>junit</groupId>
@@ -47,4 +37,14 @@
         <version>18.0</version>
     </dependency>
   </dependencies>
-</project>
+```
+最后需要用的jar包如下
+>
+junit:4.10
+mysql-connector-java:5.1.21
+slf4j-api:1.7.5
+logback-classic:1.0.13
+logback-core:1.0.13
+guava:18.0
+
+测试用例在test文件夹里`~/src/test/java/com/learn/note/practice/jdbc/dao/MySQLConnectTest.java`

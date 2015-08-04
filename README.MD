@@ -70,3 +70,8 @@ To push the current branch and set the remote as upstream, use
 ~/JavaPracticeCode git push origin master
 Everything up-to-date
 ```
+
+#### 项目结构
+[jdbc主目录](src/main/java/com/learn/note/practice/jdbc/)目录下有一些数据库的额使用样例。
+[jdbc测试目录](src/test/java/com/learn/note/practice/jdbc/)文件夹下主要是jdbc的单元测试代码。
+`testLoginValidate`函数测试了sql注入，使用`Statement`不安全，容易造成sql注入攻击。

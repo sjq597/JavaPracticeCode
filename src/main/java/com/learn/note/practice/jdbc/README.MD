@@ -40,11 +40,11 @@
 ```
 最后需要用的jar包如下
 >
-junit:4.10
-mysql-connector-java:5.1.21
-slf4j-api:1.7.5
-logback-classic:1.0.13
-logback-core:1.0.13
+junit:4.10  
+mysql-connector-java:5.1.21  
+slf4j-api:1.7.5  
+logback-classic:1.0.13  
+logback-core:1.0.13  
 guava:18.0
 
 测试用例在test文件夹里`~/src/test/java/com/learn/note/practice/jdbc/dao/MySQLConnectTest.java`
@@ -130,25 +130,25 @@ guava:18.0
 ```
 每个用户在数据库中的密码都是`test`，看看注入测试结果：
 >
-17:23:02.454 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='admin' and password='test'
-17:23:02.827 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[admin]使用密码[test]登陆成功!
-17:23:02.828 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='lilei' and password='test'
-17:23:02.850 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[lilei]使用密码[test]登陆成功!
-17:23:02.851 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='hanmeimei' and password='test'
-17:23:02.873 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[hanmeimei]使用密码[test]登陆成功!
-17:23:02.874 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='admin' and password='tes'
-17:23:02.907 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[admin]使用密码[tes]登陆失败!
-17:23:02.908 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='lilei' and password='test1'
-17:23:02.929 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[lilei]使用密码[test1]登陆失败!
-17:23:02.929 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='hanmeimei' and password='text'
-17:23:02.948 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[hanmeimei]使用密码[text]登陆失败!
-17:23:02.949 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='admin' or '1=1' and password='tes'
-17:23:02.968 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[admin' or '1=1]使用密码[tes]登陆成功!
-17:23:02.969 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='lilei' or '1=1' and password='tes1'
-17:23:02.998 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[lilei' or '1=1]使用密码[tes1]登陆成功!
-17:23:02.999 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='hanmeimei' or '1=1' and password='text'
-17:23:03.017 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[hanmeimei' or '1=1]使用密码[text]登陆成功!
-17:23:03.018 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='admin';#' and password=''
-17:23:03.035 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[admin';#]使用密码[]登陆成功!
-17:23:03.035 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='lilei';#' and password=''
+17:23:02.454 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='admin' and password='test'  
+17:23:02.827 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[admin]使用密码[test]登陆成功!  
+17:23:02.828 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='lilei' and password='test'  
+17:23:02.850 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[lilei]使用密码[test]登陆成功!  
+17:23:02.851 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='hanmeimei' and password='test'  
+17:23:02.873 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[hanmeimei]使用密码[test]登陆成功!  
+17:23:02.874 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='admin' and password='tes'  
+17:23:02.907 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[admin]使用密码[tes]登陆失败!  
+17:23:02.908 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='lilei' and password='test1'  
+17:23:02.929 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[lilei]使用密码[test1]登陆失败!  
+17:23:02.929 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='hanmeimei' and password='text'  
+17:23:02.948 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[hanmeimei]使用密码[text]登陆失败!  
+17:23:02.949 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='admin' or '1=1' and password='tes'  
+17:23:02.968 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[admin' or '1=1]使用密码[tes]登陆成功!  
+17:23:02.969 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='lilei' or '1=1' and password='tes1'  
+17:23:02.998 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[lilei' or '1=1]使用密码[tes1]登陆成功!  
+17:23:02.999 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='hanmeimei' or '1=1' and password='text'  
+17:23:03.017 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[hanmeimei' or '1=1]使用密码[text]登陆成功!  
+17:23:03.018 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='admin';#' and password=''  
+17:23:03.035 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[admin';#]使用密码[]登陆成功!  
+17:23:03.035 [main] INFO  c.l.n.practice.jdbc.dao.MySQLConnect - 登陆验证时查询的sql语句是：select * from account where user_name='lilei';#' and password=''  
 17:23:03.052 [main] INFO  c.l.n.p.jdbc.dao.MySQLConnectTest - 用户[lilei';#]使用密码[]登陆成功!

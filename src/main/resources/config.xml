@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="userBean" class="com.learn.note.practice.ioc.common.beans.UserBean">
+        <constructor-arg index="0" value="Fuck" />
+        <constructor-arg index="1" value="hehehe"/>
+    </bean>
+</beans>

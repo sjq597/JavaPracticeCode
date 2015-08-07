@@ -70,3 +70,15 @@ To push the current branch and set the remote as upstream, use
 ~/JavaPracticeCode git push origin master
 Everything up-to-date
 ```
+添加spring配置
+```xml
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/config.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+```

@@ -14,6 +14,7 @@ public class UserBean {
     }
 
     public UserBean(String userName, String userPassword) {
+
         this.userName = userName;
         this.userPassword = userPassword;
     }

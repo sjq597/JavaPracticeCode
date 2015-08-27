@@ -109,9 +109,9 @@ jdbcTemplate#query() | `query(String sql,Object[] args,RowCallbackHandler rch)`.
     <context:component-scan base-package="com.springbbs.dao"/>
 
     <!--3 定义一个使用DBCP实现的数据源-->
+    <!--如果加载不了配置文件，此处手动改为对应的值-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close"
-          <!--如果加载不了配置文件，此处手动改为对应的值-->
           p:driverClassName="${jdbc.driver}"
           p:url="${jdbc.url}"
           p:username="${jdbc.username}"
@@ -181,9 +181,9 @@ jdbc.password=root0724
         </tx:attributes>
     </tx:advice>
     <!--定义一个使用DBCP实现的数据源-->
+    <!--如果加载不了配置文件，此处手动改为对应的值-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close"
-          <!--如果加载不了配置文件，此处手动改为对应的值-->
           p:driverClassName="${jdbc.driver}"
           p:url="${jdbc.url}"
           p:username="${jdbc.username}"

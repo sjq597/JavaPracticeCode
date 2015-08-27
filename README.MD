@@ -1,5 +1,8 @@
 ### Java学习代码仓库
 
+#### 模块目录
+* 用Spring实现的一个论坛的基本功能(spring-bbs-demo)
+
 #### 项目初始化
 新建一个maven工程，使用了公司的仓库模板，过程大概如下：
 * 1.new->project->maven->create from archetype->maven-archetype-quickstart

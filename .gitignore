@@ -3,6 +3,7 @@
 
 # 忽略classes目录
 target/
+*/target/
 
 # 忽略工程文件
 *.iml

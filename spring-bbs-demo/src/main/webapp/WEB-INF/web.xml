@@ -1,7 +1,32 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-<web-app>
+    <!--从类的路径下加载Spring的配置文件，classpath管架子特指类路径-->
+    <!--多个文件用空格或者逗号可以隔开，建议使用逗号-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+
+    <!--负责自动Spring容器的监听器，它将引用上面定义的上下文恩参数获得配置文件地址-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!--Spring MVC的主控Servlet-->
+    <servlet>
+        <servlet-name>springbbs</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <!--Spring MVC处理的URL-->
+    <servlet-mapping>
+        <servlet-name>springbbs</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+
   <display-name>Archetype Created Web Application</display-name>
 </web-app>

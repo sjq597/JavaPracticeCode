@@ -114,5 +114,22 @@ public class LoginController {
 光写一个`Controller`还不够，还需要在`springbbs-servlet.xml`文件中申明我们写的控制器，扫描web路径，指定`Spring MVC`的
 视图解析器，代码如下：
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:contex="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--1 扫描web包，应用Spring注解-->
+    <contex:component-scan base-package="com.springbbs.controller"/>
+
+    <!--2 配置视图解析器，将ModelAndView及字符串解析为具体页面-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:viewClass="org.springframework.web.servlet.view.JstlView"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp"/>
+</beans>
 ```
+Spring MVC如何将视图逻辑名解析成具体视图？上面的bean即定义解析规则，可以有多种选择，这里使用的是`InternalResourceViewResolver`
+它的工作方式就是为视图逻辑名添加前后缀的方式进行解析。举个例子，逻辑名为`login`,对应的解析为`/WEB-INF/jsp/login.jsp`

@@ -138,6 +138,56 @@ Spring MVC如何将视图逻辑名解析成具体视图？上面的bean即定义
 两个页面分别为登陆页面`login.jsp`以及`main.jsp`。
 
 * login.jsp
-```html
+```jsp
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: junqiangshen
+  Date: 15-9-16
+  Time: 下午11:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Spring样例演示论坛登陆界面</title>
+</head>
+    <body>
+        <c:if test="${!empty error}">
+            <front color="red"><c:out value="${error}"/></front>
+        </c:if>
 
+        <form action="<c:url value="/loginCheck.html"/>" method="post">
+            用户名：
+            <input type="text" name="userName"/>
+            <br>
+            密码：
+            <input type="password" name="password"/>
+            <br>
+            <input type="submit" value="登陆"/>
+            <input type="reset" value="重置"/>
+        </form>
+    </body>
+</html>
+```
+
+登陆成功界面
+```jsp
+<%--
+  Created by IntelliJ IDEA.
+  User: junqiangshen
+  Date: 15-9-16
+  Time: 下午11:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title>Spring 测试论坛</title>
+</head>
+<body>
+    ${user.userName},欢迎进入Spring 样例论坛,您当前积分为${user.credits};
+</body>
+</html>
 ```

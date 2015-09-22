@@ -1,12 +1,12 @@
 ### 用spring实现一个论坛基本功能
 
 #### 运行环境
-Linux：Ubun 14.04 64bit
-IDE：IntelliJ IDEA 14.03
-JDK：1.7.40
-MySQL：5.5.44
-Tomcat：7.0.47
-​Maven：3.0.5
+Linux：Ubun 14.04 64bit  
+IDE：IntelliJ IDEA 14.03  
+JDK：1.7.40  
+MySQL：5.5.44  
+Tomcat：7.0.47  
+​Maven：3.0.5  
 
 #### 展现层
 
@@ -119,7 +119,10 @@ public class LoginController {
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:contex="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--1 扫描web包，应用Spring注解-->
     <contex:component-scan base-package="com.springbbs.controller"/>

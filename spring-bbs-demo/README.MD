@@ -132,4 +132,12 @@ public class LoginController {
 </beans>
 ```
 Spring MVC如何将视图逻辑名解析成具体视图？上面的bean即定义解析规则，可以有多种选择，这里使用的是`InternalResourceViewResolver`
-它的工作方式就是为视图逻辑名添加前后缀的方式进行解析。举个例子，逻辑名为`login`,对应的解析为`/WEB-INF/jsp/login.jsp`
+它的工作方式就是为视图逻辑名添加前后缀的方式进行解析。举个例子，逻辑名为`login`,对应的解析为`/WEB-INF/jsp/login.jsp`。
+
+### JSP视图页面
+两个页面分别为登陆页面`login.jsp`以及`main.jsp`。
+
+* login.jsp
+```html
+
+```
